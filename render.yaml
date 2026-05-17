@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: makeathon-2026-legends-findoc-ai
+    runtime: node
+    plan: free
+    branch: main
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false

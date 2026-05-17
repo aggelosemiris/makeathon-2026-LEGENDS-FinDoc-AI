@@ -93,6 +93,47 @@ npm run build
 npm run start
 ```
 
+## Deployment σε Render
+
+Το project είναι έτοιμο για deployment ως Render Web Service μέσω του αρχείου `render.yaml`.
+
+### Βήματα στο Render
+
+1. Ανοίξτε το Render Dashboard.
+2. Επιλέξτε **New +** και μετά **Blueprint** ή **Web Service**.
+3. Συνδέστε το GitHub repository:
+
+   ```text
+   https://github.com/aggelosemiris/makeathon-2026-LEGENDS-FinDoc-AI
+   ```
+
+4. Αν χρησιμοποιήσετε Blueprint, το Render θα διαβάσει αυτόματα το `render.yaml`.
+5. Αν το στήσετε χειροκίνητα ως Web Service, χρησιμοποιήστε:
+
+   ```text
+   Runtime: Node
+   Branch: main
+   Build Command: npm ci && npm run build
+   Start Command: npm run start
+   ```
+
+6. Στα Environment Variables προσθέστε:
+
+   ```text
+   GEMINI_API_KEY=your_api_key_here
+   NODE_ENV=production
+   ```
+
+Το backend χρησιμοποιεί `process.env.PORT`, οπότε είναι συμβατό με το port που ορίζει αυτόματα το Render.
+
+Μετά το deploy, το Render δίνει μόνιμο public URL τύπου:
+
+```text
+https://your-service-name.onrender.com
+```
+
+Σημείωση: στο free plan το service μπορεί να κάνει sleep όταν δεν χρησιμοποιείται. Για πάντα ενεργό service χρειάζεται paid instance ή custom setup.
+
 ### Type Check
 
 ```bash
