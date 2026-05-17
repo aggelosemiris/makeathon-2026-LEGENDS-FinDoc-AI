@@ -168,10 +168,37 @@ function normalize(value = "") {
     .trim();
 }
 
+function editDistance(a: string, b: string) {
+  if (a === b) return 0;
+  if (!a) return b.length;
+  if (!b) return a.length;
+
+  const previous = Array.from({ length: b.length + 1 }, (_, index) => index);
+  const current = Array.from({ length: b.length + 1 }, () => 0);
+
+  for (let i = 1; i <= a.length; i += 1) {
+    current[0] = i;
+    for (let j = 1; j <= b.length; j += 1) {
+      const substitutionCost = a[i - 1] === b[j - 1] ? 0 : 1;
+      current[j] = Math.min(
+        previous[j] + 1,
+        current[j - 1] + 1,
+        previous[j - 1] + substitutionCost,
+      );
+    }
+    previous.splice(0, previous.length, ...current);
+  }
+
+  return previous[b.length];
+}
+
 function scoreInvoice(query: string, invoice: ReturnType<typeof listInvoiceFiles>[number]) {
   const q = normalize(query);
   const filename = normalize(invoice.name);
   const code = normalize(invoice.code);
+  const compactQuery = q.replace(/\s+/g, "");
+  const compactCode = code.replace(/\s+/g, "");
+  const compactFilename = filename.replace(/\s+/g, "");
   const invoiceNumber = normalize(invoice.invoiceNumber);
   const supplier = normalize(invoice.supplier);
   const haystack = normalize([
@@ -194,11 +221,16 @@ function scoreInvoice(query: string, invoice: ReturnType<typeof listInvoiceFiles
   if (supplier && supplier === q) score += 95;
   if (filename.includes(q) || code.includes(q)) score += 75;
   if (haystack.includes(q)) score += 60;
+  if (compactQuery.length >= 8 && editDistance(compactQuery, compactCode) <= 2) score += 90;
+  if (compactQuery.length >= 8 && editDistance(compactQuery, compactFilename) <= 4) score += 55;
 
   for (const number of numericParts) {
     if (invoice.name.includes(number) || invoice.code.includes(number)) score += 55;
     if (String(invoice.invoiceNumber).includes(number)) score += 65;
     if (String(invoice.searchableText).includes(number)) score += 25;
+
+    const codeNumber = String(invoice.code).match(/\d{3,}/)?.[0] || "";
+    if (codeNumber.length === number.length && editDistance(number, codeNumber) <= 2) score += 70;
   }
 
   for (const term of q.split(" ").filter((item) => item.length > 2)) {
