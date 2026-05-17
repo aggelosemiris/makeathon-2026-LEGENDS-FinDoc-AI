@@ -134,6 +134,42 @@ https://your-service-name.onrender.com
 
 Σημείωση: στο free plan το service μπορεί να κάνει sleep όταν δεν χρησιμοποιείται. Για πάντα ενεργό service χρειάζεται paid instance ή custom setup.
 
+## Deployment σε Railway
+
+Το project είναι επίσης έτοιμο για deployment στο Railway μέσω GitHub repository. Το αρχείο `railway.json` ορίζει:
+
+- Build command: `npm ci && npm run build`
+- Start command: `npm run start`
+- Healthcheck endpoint: `/api/invoices`
+
+### Βήματα στο Railway
+
+1. Ανοίξτε το Railway Dashboard.
+2. Επιλέξτε **New Project**.
+3. Επιλέξτε **Deploy from GitHub repo**.
+4. Διαλέξτε το repository:
+
+   ```text
+   aggelosemiris/makeathon-2026-LEGENDS-FinDoc-AI
+   ```
+
+5. Στο service, ανοίξτε την καρτέλα **Variables**.
+6. Προσθέστε:
+
+   ```text
+   GEMINI_API_KEY=your_api_key_here
+   NODE_ENV=production
+   ```
+
+7. Κάντε deploy.
+8. Από τα settings/networking του service, δημιουργήστε public domain για να πάρετε URL τύπου:
+
+   ```text
+   https://your-service.up.railway.app
+   ```
+
+Σημαντικό: Το `GEMINI_API_KEY` μπαίνει μόνο στα Variables του Railway και ποτέ μέσα στον κώδικα ή στο GitHub.
+
 ### Type Check
 
 ```bash
