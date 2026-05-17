@@ -1,0 +1,22 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+cloudflared.exe
+_incoming_*/
+data/invoice-cache.json
+public/invoices/*
+!public/invoices/X00016469619 (3).jpg
+!public/invoices/X51005230617 (6).jpg
+!public/invoices/X51005301659 (5).jpg
+!public/invoices/X51005301666 (6).jpg
+!public/invoices/X51005361895 (6).jpg
+!public/invoices/X51005365179 (6).jpg
+!public/invoices/X51005433533 (6).jpg
+!public/invoices/X51005442379 (6).jpg
+!public/invoices/X51005442383 (6).jpg
+!public/invoices/X51005442394 (6).jpg

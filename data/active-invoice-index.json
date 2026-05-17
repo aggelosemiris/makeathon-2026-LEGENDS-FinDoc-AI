@@ -1,0 +1,143 @@
+{
+  "X51005442383 (6).jpg": {
+    "supplier": "CARREFOUR RESTAURANT",
+    "invoiceNumber": "CS00018751",
+    "date": "20/03/2016",
+    "total": 13.8,
+    "currency": "RM",
+    "summary": "Restaurant receipt from Carrefour Restaurant with two items and a total of RM 13.80.",
+    "items": [
+      { "description": "238 item", "quantity": 1, "unitPrice": 10, "total": 10 },
+      { "description": "1033 item", "quantity": 1, "unitPrice": 3, "total": 3 }
+    ],
+    "rawText": "CARREFOUR RESTAURANT JM07267765-U 18, JALAN PERMAS 10/7 BANDAR BARU PERMAS JAYA MASAI, JOHOR. GST ID: 000433614848 TEL: 07-3822812 TABLE: 3 RECEIPT CS00018751 DATE: 20/03/2016 TIME: 12:42:00 CASHIER: BAI HE ITEM QTY U/P AMOUNT 238 1 10.00 10.00 1033 1 3.00 3.00 TOTAL QTY: 2 SUB-TOTAL 13.00 DISC 0.00 SERVICE CHARGE 0.00 GOV TAX 0.78 ROUNDING 0.02 TOTAL 13.80 CASH 13.80 CHANGE 0.00 GOODS SOLD ARE NOT RETURNABLE, THANK YOU."
+  },
+  "X51005442394 (6).jpg": {
+    "supplier": "UNIHAKKA INTERNATIONAL SDN BHD / BAR WANG RICE",
+    "invoiceNumber": "OR18033002170384",
+    "date": "30 Mar 2018 18:17",
+    "total": 8.2,
+    "currency": "$",
+    "summary": "Tax invoice from Bar Wang Rice at Permas Jaya for meat, veg and vegetable, net total $8.20.",
+    "items": [
+      { "description": "SR I00100000035 - 1 Meat + 3 Vege", "quantity": 1, "unitPrice": 7.1, "total": 7.1 },
+      { "description": "SR I00100000015 - Vegetable", "quantity": 1, "unitPrice": 1.1, "total": 1.1 }
+    ],
+    "rawText": "UNIHAKKA INTERNATIONAL SDN BHD 30 Mar 2018 18:17 (867388-U) 12, Jalan Tampoi 7/4, Kawasan Perindustrian Tampoi, 81200 Johor Bahru, Johor TAX INVOICE Invoice #: OR18033002170384 SR I00100000035 - 1 Meat + 3 Vege $7.10 qty 1 total $7.10 SR I00100000015 - Vegetable $1.10 qty 1 total $1.10 Total Amount: $8.20 GST @6%: $0.46 Nett Total: $8.20 Payment Mode CASH $8.20 Change $0.00 GST REG #000656195584 BAR WANG RICE @ PERMAS JAYA."
+  },
+  "X00016469619 (3).jpg": {
+    "supplier": "INDAH GIFT & HOME DECO",
+    "invoiceNumber": "050100035279",
+    "date": "19/10/2018 20:49:59",
+    "total": 60.3,
+    "currency": "RM",
+    "summary": "Receipt from Indah Gift & Home Deco for a privilege card and table lamp, total RM 60.30 after discount and rounding adjustment.",
+    "items": [
+      { "description": "ST-PRIVILEGE CARD/GD INDAH 88888", "quantity": 1, "unitPrice": 10, "total": 10 },
+      { "description": "GF-TABLE LAMP/STITCH 62483", "quantity": 1, "unitPrice": 55.9, "total": 55.9 },
+      { "description": "DISC 10.00%", "total": -5.59 },
+      { "description": "ROUNDING ADJ.", "total": -0.01 }
+    ],
+    "rawText": "tan woon yann INDAH GIFT & HOME DECO 27, JALAN DEDAP 13, TAMAN JOHOR JAYA, 81100 JOHOR BAHRU, JOHOR. Tel:07-3507405 Fax:07-3558160 RECEIPT 19/10/2018 20:49:59 #01 Cashier: CN Location/SP: 05 /0531 MB: M026588 Room No: 01 050100035279 Desc/Item Qty Price Amt(RM) ST-PRIVILEGE CARD/GD INDAH 88888 1 10.00 10.00 GF-TABLE LAMP/STITCH 62483 1 55.90 55.90 @DISC 10.00% -5.59 Total Qty 2 TOTAL AMT RM 60.31 ROUNDING ADJ -0.01 RM 60.30 CASH RM 70.30 CHANGE RM 10.00 Thank You. Goods Sold Are Not Returnable."
+  },
+  "X51005230617 (6).jpg": {
+    "supplier": "McDonald's BHP Taman Melawati",
+    "invoiceNumber": "003281900229170",
+    "date": "18/01/2018 10:27:03",
+    "total": 26.6,
+    "currency": "RM",
+    "summary": "McDonald's tax invoice from Gerbang Alaf Restaurants Sdn Bhd for two ChicMcMuffin, porridge, hotcakes and coke, total RM 26.60.",
+    "items": [
+      { "description": "2 ChicMcMuffin", "quantity": 2, "total": 11 },
+      { "description": "1 M Porridge", "quantity": 1, "total": 5.6 },
+      { "description": "1 BM 2HotCakes", "quantity": 1, "total": 10 },
+      { "description": "1 L Coke", "quantity": 1 }
+    ],
+    "rawText": "Gerbang Alaf Restaurants Sdn Bhd formerly known as Golden Arches Restaurants Sdn Bhd Licensee of McDonald's. McDonald's BHP Taman Melawati (#328) Tel No. 03-4162-2318 TAX INVOICE MFY Side 1 INV# 003281900229170 ORD #50 - REG #19 - 18/01/2018 10:27:03 QTY ITEM TOTAL 2 ChicMcMuffin 11.00 1 M Porridge 5.60 1 BM 2HotCakes 10.00 1 L Coke TakeOut Total (incl GST) 26.60 Total Rounded 26.60 Cash Tendered 100.00 Change 73.40 TOTAL INCLUDES 6% GST 1.51."
+  },
+  "X51005301666 (6).jpg": {
+    "supplier": "LIGHTROOM GALLERY SDN BHD",
+    "invoiceNumber": "LCN00212",
+    "date": "20/11/2017 03:57:01 PM",
+    "total": 278.8,
+    "currency": "RM",
+    "summary": "Credit note from Lightroom Gallery Sdn Bhd for lighting track items, total RM 278.80.",
+    "items": [
+      { "description": "YE36 BK 12W WW LED TRACK LIGHT", "quantity": 2, "unitPrice": 45.29, "total": 90.57 },
+      { "description": "YE44 35W WW BK TRACK HOLDER", "quantity": 1, "unitPrice": 155.66, "total": 155.66 },
+      { "description": "1METER TRACK-BK", "quantity": 1, "unitPrice": 16.99, "total": 16.79 }
+    ],
+    "rawText": "LIGHTROOM GALLERY SDN BHD No: 28, Jalan Astana 1C, Bandar Bukit Raja, 41050 Klang Selangor D.E. Malaysia ROC No. (1072825-A) GST No. 000584089600 Tel:03-3362 4395 CREDIT NOTE Station: CASHIER Cashier: ANGELA C/N No: LCN00212 Cover: 1 Bill Date: 20/11/2017 Bill Start: 20/11/2017 03:57:01 PM Code 300-E0009 Name ESWARAN 012-6369400 YT51129 YE36 BK 12W WW LED TRACK LIGHT 2 RM 45.29 UNI = RM 90.57 YT52683 YE44 35W WW BK TRACK HOLDER 1 RM 155.66 UNI = RM 155.66 CH50688 1METER TRACK-BK 1 RM 16.99 UNI = RM 16.79 Sub Total RM 263.02 Item Discount RM 0.20 Service Charge RM 0.00 GST/TAX 6% RM 15.78 TOT RM 278.80 CASH RM 278.80 CHANGE RM 0.00."
+  },
+  "X51005301659 (5).jpg": {
+    "supplier": "HOME MASTER HARDWARE & ELECTRICAL",
+    "invoiceNumber": "CS 67732",
+    "date": "22/12/2017 14:03",
+    "total": 15.9,
+    "currency": "RM",
+    "summary": "Tax invoice from Home Master Hardware & Electrical for M.ONE tape, total RM 15.90.",
+    "items": [
+      { "description": "24MMx7Y M.ONE TAPE", "quantity": 1, "unitPrice": 15.9, "total": 15.9 }
+    ],
+    "rawText": "HOME MASTER HARDWARE & ELECTRICAL NO.113G & 115G, JALAN SETIA GEMILANG U13/BG BANDAR SETIA ALAM, 40170 BANDAR SETIA ALAM, SELANGOR. Company Reg No. SA0371151-P GST Reg No. 001637511168 TAX INVOICE Invoice No: CS 67732 Date: 22/12/2017 14:03 Cashier#: CASHIER 24MMx7Y M.ONE TAPE 1.00 x 15.90 15.90 SR Subtotal 15.90 Total Excl. Of GST 15.00 Total Incl. Of GST 15.90 Total Amt Rounded 15.90 Payment 50.00 Change Due 34.10 Total Item(s): 1 GST Summary SR @ 6% Amount 15.00 Tax 0.90 THANK YOU."
+  },
+  "X51005361895 (6).jpg": {
+    "supplier": "FUYI MINI MARKET",
+    "invoiceNumber": "1CR0576494",
+    "date": "25/01/2018 1:22:56 PM",
+    "total": 9,
+    "currency": "RM",
+    "summary": "Tax invoice from Fuyi Mini Market for one Summer Cup 48x230ml, total RM 9.00.",
+    "items": [
+      { "description": "013 SUMMER CUP 48X230ML", "quantity": 1, "unitPrice": 8.49, "total": 9 }
+    ],
+    "rawText": "FUYI MINI MARKET BR No. 0195932-X No 43-45-47G Taman Sejati Ijok, 45600 Bestari Jaya, Kuala Selangor. GST No: 001601310720 25/01/2018 1:22:56PM TAX INVOICE TRN: 1CR0576494 COUNTER 1 CASHIER: HOCK Qty UOM U.Price Amt Amt Inc.Tax Code 013 SUMMER CUP 48X230ML 1 KOTAK 8.49 8.49 9.00 SR GST 6% + 0.51 Total Qty: 1.00 Total Includes GST 6% 9.00 Customer's Payment Cash 50.00 Change 41.00 GST Summary SR Amount 8.49 Tax 0.51 Goods sold are not returnable."
+  },
+  "X51005365179 (6).jpg": {
+    "supplier": "C W KHOO HARDWARE SDN BHD",
+    "invoiceNumber": "CR 1803/0064",
+    "date": "01-03-18 5:23:26 PM",
+    "total": 21.2,
+    "currency": "MYR",
+    "summary": "Tax invoice from C W Khoo Hardware Sdn Bhd for five air adaptors, net total MYR 21.20.",
+    "items": [
+      { "description": "AIR ADAPTOR @ 1", "quantity": 5, "unitPrice": 4, "total": 20 }
+    ],
+    "rawText": "C W KHOO HARDWARE SDN BHD (481500-M) NO.50, JALAN PBS 14/11, KAWASAN PERINDUSTRIAN BUKIT SERDANG Tel: 03-89410243 GST Reg No: 000549584896 Tax Invoice Invoice No: CR 1803/0064 Date: 01-03-18 5:23:26 PM Cashier No: khoo Counter No: c1 Printed Date: 01-03-18 5:23:30 PM Item Name Qty Unit Price Amount AIR ADAPTOR @ 1 5 4.00 20.00 SR 5 Item(s) Total (MYR): 20.00 GST @ 6%: 1.20 Net Total (MYR): 21.20 Cash 21.20 Change 0.00 GST Summary SR @ 6% item 1 amount 20.00 SST 1.20."
+  },
+  "X51005433533 (6).jpg": {
+    "supplier": "PERNIAGAAN ZHENG HUI",
+    "invoiceNumber": "CS00084670",
+    "date": "09/03/2018 08:49:00",
+    "total": 332.3,
+    "currency": "RM",
+    "summary": "Simplified tax invoice from Perniagaan Zheng Hui for engineering and hardware supplies, total RM 332.30.",
+    "items": [
+      { "description": "SR: 14 TRU-CUT CUTTING DISC (1PCS)", "quantity": 1, "unitPrice": 170, "total": 170 },
+      { "description": "SR: KOBELCO G-12#(2.6MM) WELDING", "quantity": 1, "unitPrice": 35, "total": 35 },
+      { "description": "SR: CS 3 inch (750) PAINT BRUSH", "quantity": 2, "unitPrice": 7.5, "total": 15 },
+      { "description": "SR: CS 2 inch (750) PAINT BRUSH", "quantity": 2, "unitPrice": 5.5, "total": 11 },
+      { "description": "SR: CS 1-1/2 inch (750) PAINT BRUSH", "quantity": 1, "unitPrice": 3.5, "total": 3.5 },
+      { "description": "SR: 2 inch LAMBWOOL YANDA ROLLER REFIL - 20 PCS", "quantity": 1, "unitPrice": 26, "total": 26 },
+      { "description": "SR: DIAMOND COTTON GLOVE B104", "quantity": 1, "unitPrice": 6, "total": 6 },
+      { "description": "SR: 10# WELDING GLASS (BLACK) 1PCS", "quantity": 5, "unitPrice": 1, "total": 5 },
+      { "description": "SR: WELDING GLASS (CLEAR) 1 PC", "quantity": 10, "unitPrice": 0.3, "total": 3 },
+      { "description": "SR: AEC BROOM NO.5110# CAW IRON HANDLE", "quantity": 2, "unitPrice": 8, "total": 16 },
+      { "description": "SR: S/STEEL DUST PAN L CH/HANDLE", "quantity": 2, "unitPrice": 12, "total": 24 }
+    ],
+    "rawText": "PERNIAGAAN ZHENG HUI JM0325955-V NO.59 JALAN PERMAS 9/6 BANDAR BARU PERMAS JAYA 81750 JOHOR BAHRU TEL: 07-3867524 FAX: 07-3863793 GST NO: 000805898824 SIMPLIFIED TAX INVOICE GOGIANT ENGINEERING (M) SDN BHD Receipt#: CS00084670 Cashier: USER Date: 09/03/2018 Time: 08:49:00 Total Qty 28 Excluded GST Sub Total RM 313.50 Discount RM 0.00 Total GST RM 18.81 Rounding RM -0.01 Total RM 332.30 CASH RM 332.30 Change RM 0.00 GST SUMMARY SR 6 amount 313.50 GST 18.81 GOODS SOLD ARE NOT RETURNABLE, THANK YOU."
+  },
+  "X51005442379 (6).jpg": {
+    "supplier": "UNIHAKKA INTERNATIONAL SDN BHD / BAR WANG RICE",
+    "invoiceNumber": "OR18032402170368",
+    "date": "24 Mar 2018 18:23",
+    "total": 9.2,
+    "currency": "$",
+    "summary": "Tax invoice from Bar Wang Rice at Permas Jaya for meat, veg and add vegetable, net total $9.20.",
+    "items": [
+      { "description": "SR I00100000027 - 2 Meat + 2 Vege", "quantity": 1, "unitPrice": 8.7, "total": 8.7 },
+      { "description": "SR I00100000064 - Add Vegetable", "quantity": 1, "unitPrice": 0.5, "total": 0.5 }
+    ],
+    "rawText": "UNIHAKKA INTERNATIONAL SDN BHD 24 Mar 2018 18:23 (867388-U) 12, Jalan Tampoi 7/4 Kawasan Perindustrian Tampoi, 81200 Johor Bahru, Johor TAX INVOICE Invoice #: OR18032402170368 SR I00100000027 - 2 Meat + 2 Vege $8.70 qty 1 total $8.70 SR I00100000064 - Add Vegetable $0.50 qty 1 total $0.50 Total Amount: $9.20 GST @6%: $0.52 Nett Total: $9.20 Payment Mode CASH $9.20 Change $0.00 GST REG #000656195584 BAR WANG RICE @ PERMAS JAYA."
+  }
+}

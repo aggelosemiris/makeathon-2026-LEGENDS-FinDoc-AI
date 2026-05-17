@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  }
+}
+
+.brutalist-border {
+  @apply border-2 border-slate-900;
+}
+
+.brutalist-shadow {
+  @apply shadow-[4px_4px_0px_0px_rgba(15,23,42,1)];
+}
+
+.brutalist-shadow-lg {
+  @apply shadow-[8px_8px_0px_0px_rgba(15,23,42,1)];
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: FinDoc Auditor AI",
+  "description": "Ultra-strict digital financial auditor for precise invoice and receipt analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
