@@ -348,7 +348,7 @@ app.post("/api/analyze-banking", async (req, res) => {
     }
 
     const data = JSON.parse(text);
-    res.json(data);
+    res.json(extendWithSandboxLedger(data));
   } catch (error: any) {
     console.error("Banking analysis error:", error);
     if (error.status === 429 || error.message?.includes("429") || error.message?.includes("Quota")) {
@@ -362,93 +362,400 @@ app.post("/api/analyze-banking", async (req, res) => {
 });
 
 // Simulated Banking API
-app.get("/api/fake-bank-account", (req, res) => {
-  const mockData = {
+function getMockBankingData() {
+  return {
     summary: {
       bank_name: "Alpha Digital Bank",
       account_holder: "ΓΕΩΡΓΙΟΣ ΠΑΠΑΔΟΠΟΥΛΟΣ",
       account_number: "GR76 0110 1234 0000 9876 5432 101",
       period: "Μάιος 2026",
-      opening_balance: 14500.50,
-      closing_balance: 12150.20,
-      total_credits: 3200.00,
-      total_debits: 5550.30,
+      opening_balance: 10000.00,
+      closing_balance: 13341.01,
+      total_credits: 5600.00,
+      total_debits: 2258.99,
       currency: "EUR"
     },
     transactions: [
       {
+        date: "25/12/2018",
+        time: "20:13:39",
+        description: "KF MODELLING CLAY KIDDY - RETAIL",
+        amount: 9.00,
+        type: "DEBIT",
+        category: "Shopping",
+        balance: 11954.21,
+        rf_code: "RF81167184",
+        status: "PAID"
+      },
+      {
+        date: "25/12/2018",
+        time: "20:30:15",
+        description: "ΣΚΛΑΒΕΝΙΤΗΣ SUPER MARKET",
+        amount: 54.20,
+        type: "DEBIT",
+        category: "Food",
+        balance: 11900.01,
+        rf_code: "RF9988776655",
+        status: "PAID"
+      },
+      {
+        date: "25/12/2018",
+        time: "21:15:00",
+        description: "Bazaar Supermarket - Weekly",
+        amount: 42.10,
+        type: "DEBIT",
+        category: "Food",
+        balance: 11857.91,
+        rf_code: "RF1122334455",
+        status: "PAID"
+      },
+      {
+        date: "25/12/2018",
+        time: "09:00:00",
+        description: "ΜΙΣΘΟΔΟΣΙΑ - SALARY PAYMENT",
+        amount: 1450.00,
+        type: "CREDIT",
+        category: "Salary",
+        balance: 13350.01,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "25/12/2018",
+        time: "08:30:00",
+        description: "BONUS ΕΡΓΑΣΙΑΣ - ΕΤΗΣΙΟ",
+        amount: 500.00,
+        type: "CREDIT",
+        category: "Salary",
+        balance: 11900.01,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "16/05/2026",
+        time: "12:15",
+        description: "WOLT GREECE - FOOD DELIVERY",
+        amount: 28.50,
+        type: "DEBIT",
+        category: "Food",
+        balance: 11954.21,
+        rf_code: "RF33445566778899001122334",
+        status: "PAID"
+      },
+      {
+        date: "15/05/2026",
+        time: "19:40",
+        description: "PUBLIC - TECH & BOOKS",
+        amount: 145.00,
+        type: "DEBIT",
+        category: "Shopping",
+        balance: 11982.71,
+        rf_code: "RF22334455667788990011223",
+        status: "UNPAID"
+      },
+      {
+        date: "15/05/2026",
+        time: "09:10",
+        description: "APPLE.COM/BILL - ICLOUD STORAGE",
+        amount: 9.99,
+        type: "DEBIT",
+        category: "Utilities",
+        balance: 12127.71,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
         date: "14/05/2026",
+        time: "14:25",
         description: "ΔΕΔΔΗΕ Α.Ε. - ΕΞΟΦΛΗΣΗ ΛΟΓΑΡΙΑΣΜΟΥ",
         amount: 345.20,
         type: "DEBIT",
         category: "Utilities",
-        balance: 12150.20,
+        balance: 12137.70,
         rf_code: "RF12345678901234567890123",
         status: "PAID"
       },
       {
+        date: "14/05/2026",
+        time: "10:15",
+        description: "UBER TRIPS - TRANSFER",
+        amount: 22.50,
+        type: "DEBIT",
+        category: "Transport",
+        balance: 12482.90,
+        rf_code: "RF11223344556677889900112",
+        status: "PAID"
+      },
+      {
         date: "13/05/2026",
+        time: "15:20",
+        description: "REVOLUT - ACCOUNT TOP UP",
+        amount: 150.00,
+        type: "DEBIT",
+        category: "Transfer",
+        balance: 12505.40,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "13/05/2026",
+        time: "09:00",
         description: "ΜΙΣΘΟΔΟΣΙΑ ΜΑΪΟΥ",
         amount: 2200.00,
         type: "CREDIT",
         category: "Salary",
-        balance: 12495.40,
+        balance: 12655.40,
         rf_code: null,
-        status: "COMPLETED"
+        status: "PAID"
       },
       {
         date: "12/05/2026",
+        time: "18:42",
         description: "ΣΚΛΑΒΕΝΙΤΗΣ - ΑΓΟΡΕΣ",
         amount: 156.40,
         type: "DEBIT",
         category: "Food",
-        balance: 10295.40,
+        balance: 10455.40,
         rf_code: "RF98765432109876543210987",
         status: "PAID"
       },
       {
+        date: "12/05/2026",
+        time: "12:30",
+        description: "ΦΑΡΜΑΚΕΙΟ ΠΑΠΑΓΕΩΡΓΙΟΥ",
+        amount: 42.15,
+        type: "DEBIT",
+        category: "Healthcare",
+        balance: 10611.80,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "11/05/2026",
+        time: "20:15",
+        description: "NETFLIX.COM - SUBSCRIPTION",
+        amount: 14.99,
+        type: "DEBIT",
+        category: "Leisure",
+        balance: 10653.95,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "11/05/2026",
+        time: "10:00",
+        description: "H&M GREECE - RETAIL",
+        amount: 112.50,
+        type: "DEBIT",
+        category: "Shopping",
+        balance: 10668.94,
+        rf_code: "RF55667788990011223344556",
+        status: "PAID"
+      },
+      {
         date: "10/05/2026",
+        time: "11:15",
         description: "ΕΝΟΙΚΙΟ ΚΑΤΟΙΚΙΑΣ - ΜΑΪΟΣ",
         amount: 650.00,
         type: "DEBIT",
         category: "Other",
-        balance: 10451.80,
+        balance: 10781.44,
         rf_code: "RF55544433322211100099988",
         status: "UNPAID"
       },
       {
+        date: "10/05/2026",
+        time: "15:45",
+        description: "ZARA GREECE - RETAIL",
+        amount: 89.90,
+        type: "DEBIT",
+        category: "Shopping",
+        balance: 11431.44,
+        rf_code: "RF66778899001122334455667",
+        status: "PAID"
+      },
+      {
+        date: "09/05/2026",
+        time: "14:10",
+        description: "TAXIBEAT P.C. - TRANSPORT",
+        amount: 18.20,
+        type: "DEBIT",
+        category: "Transport",
+        balance: 11521.34,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "09/05/2026",
+        time: "08:30",
+        description: "EKO STATIONS - FUEL",
+        amount: 45.00,
+        type: "DEBIT",
+        category: "Transport",
+        balance: 11539.54,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
         date: "08/05/2026",
+        time: "16:30",
         description: "COFFEE ISLAND",
         amount: 4.50,
         type: "DEBIT",
         category: "Leisure",
-        balance: 11101.80,
+        balance: 11584.54,
         rf_code: null,
-        status: "COMPLETED"
+        status: "PAID"
+      },
+      {
+        date: "08/05/2026",
+        time: "09:00",
+        description: "BONUS ΕΠΙΣΤΡΟΦΗ - ΑΛΦΑ",
+        amount: 300.00,
+        type: "CREDIT",
+        category: "Other",
+        balance: 11589.04,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "07/05/2026",
+        time: "10:00",
+        description: "ΜΕΤΑΦΟΡΑ ΑΠΟ ΤΡΙΤΟ - P2P",
+        amount: 500.00,
+        type: "CREDIT",
+        category: "Transfer",
+        balance: 11289.04,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "06/05/2026",
+        time: "21:30",
+        description: "EFG EUROBANK - MONTHLY FEES",
+        amount: 1.50,
+        type: "DEBIT",
+        category: "Other",
+        balance: 10789.04,
+        rf_code: null,
+        status: "PAID"
       },
       {
         date: "05/05/2026",
+        time: "12:00",
         description: "ΜΕΤΑΦΟΡΑ ΑΠΟ ΤΡΙΤΟ - ΠΩΛΗΣΗ",
         amount: 1000.00,
         type: "CREDIT",
         category: "Transfer",
-        balance: 11106.30,
+        balance: 10790.54,
         rf_code: "RF00011122233344455566677",
         status: "PAID"
       },
       {
+        date: "04/05/2026",
+        time: "19:20",
+        description: "AMAZON.CO.UK - ORDER #123",
+        amount: 125.00,
+        type: "DEBIT",
+        category: "Shopping",
+        balance: 9790.54,
+        rf_code: "RF88990011223344556677889",
+        status: "UNPAID"
+      },
+      {
+        date: "04/05/2026",
+        time: "10:45",
+        description: "MYMARKET - GROCERIES",
+        amount: 68.37,
+        type: "DEBIT",
+        category: "Food",
+        balance: 9915.54,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "03/05/2026",
+        time: "11:00",
+        description: "HOLMES PLACE GYM",
+        amount: 50.00,
+        type: "DEBIT",
+        category: "Leisure",
+        balance: 9983.91,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
         date: "02/05/2026",
+        time: "10:20",
         description: "Vodafone - Κινητή & Internet",
         amount: 45.00,
         type: "DEBIT",
         category: "Utilities",
-        balance: 10106.30,
+        balance: 10033.91,
         rf_code: "RF77788899900011122233344",
         status: "UNPAID"
+      },
+      {
+        date: "01/05/2026",
+        time: "09:00",
+        description: "ΜΕΡΙΣΜΑΤΑ ΜΕΤΟΧΩΝ - DIV",
+        amount: 150.00,
+        type: "CREDIT",
+        category: "Transfer",
+        balance: 10078.91,
+        rf_code: null,
+        status: "PAID"
+      },
+      {
+        date: "01/05/2026",
+        time: "14:30",
+        description: "Public - Books & Gadgets",
+        amount: 45.90,
+        type: "DEBIT",
+        category: "Shopping",
+        balance: 10033.01,
+        rf_code: "RF333222111",
+        status: "PAID"
+      },
+      {
+        date: "30/04/2026",
+        time: "11:20",
+        description: "INTEREST INCOME - BANK",
+        amount: 0.45,
+        type: "CREDIT",
+        category: "Other",
+        balance: 10033.46,
+        rf_code: null,
+        status: "PAID"
       }
     ]
   };
-  res.json(mockData);
+}
+
+function extendWithSandboxLedger(data: any) {
+  const mockData = getMockBankingData();
+  const extracted = Array.isArray(data?.transactions) ? data.transactions : [];
+  if (extracted.length === 0) return mockData;
+
+  return {
+    ...mockData,
+    summary: {
+      ...mockData.summary,
+      ...(data.summary || {}),
+      total_credits: mockData.summary.total_credits,
+      total_debits: mockData.summary.total_debits,
+      closing_balance: mockData.summary.closing_balance,
+      currency: data.summary?.currency || mockData.summary.currency,
+    },
+    transactions: [
+      ...extracted,
+      ...mockData.transactions.slice(1),
+    ],
+  };
+}
+
+app.get("/api/fake-bank-account", (_req, res) => {
+  res.json(getMockBankingData());
 });
 
 async function startServer() {
